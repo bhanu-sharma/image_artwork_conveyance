@@ -140,11 +140,8 @@ for i in range(iterations):
 x = x.reshape((height, width, 3))
 
 x = x[:, :, ::-1]
-# x[:, :, 0] += 103.939
 x[:, :, 0] += np.add(x[:, :, 0], 103.939, out=x[:, :, 0], casting="unsafe")
-# x[:, :, 1] += 116.779
 x[:, :, 1] += np.add(x[:, :, 1], 116.779, out=x[:, :, 1], casting="unsafe")
-# x[:, :, 2] += 123.68
 x[:, :, 2] += np.add(x[:, :, 2], 123.68, out=x[:, :, 2], casting="unsafe")
 x = np.clip(x, 0, 255).astype('uint8')
 
