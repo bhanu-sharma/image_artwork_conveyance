@@ -126,7 +126,6 @@ iterations = 10
 for i in range(iterations):
     print('Start of iteration', i)
     start_time = time.time()
-    #o = K.manual_variable_initialization(evaluator.grads)
     x, min_val, info = fmin_l_bfgs_b(evaluator.loss, 
                                      x.flatten(), 
                                      fprime=evaluator.grads,
